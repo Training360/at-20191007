@@ -1,0 +1,184 @@
+{
+  "id": "b130e15b-96a4-4991-b91d-71c05ad29732",
+  "version": "2.0",
+  "name": "Locations",
+  "url": "http://www.learnwebservices.com",
+  "tests": [{
+    "id": "bc6e1b99-29c4-4138-8733-2d59812db4d8",
+    "name": "Update location",
+    "commands": [{
+      "id": "847767cc-3d72-4b14-b11f-19fcc6c22af3",
+      "comment": "",
+      "command": "open",
+      "target": "/locations/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0622128-8def-42f7-abb7-e847b9abbb0b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1167x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd4dc6ef-b36e-4e97-a70b-6d3989a717b0",
+      "comment": "",
+      "command": "run",
+      "target": "Create location PART",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "60724754-f0db-4dc8-8434-1f2b7fca25eb",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) .btn-link",
+      "targets": [
+        ["css=tr:nth-child(2) .btn-link", "css:finder"],
+        ["xpath=//tbody[@id='locations-table-tbody']/tr[2]/td[6]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[6]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f98fe7a0-7292-47d2-a935-e07ad8f8815d",
+      "comment": "",
+      "command": "click",
+      "target": "id=update-location-name",
+      "targets": [
+        ["id=update-location-name", "id"],
+        ["css=#update-location-name", "css:finder"],
+        ["xpath=//input[@id='update-location-name']", "xpath:attributes"],
+        ["xpath=//form[@id='update-location-form']/div/input", "xpath:idRelative"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64a9bab1-18df-4564-82c2-9aa0d29d6052",
+      "comment": "",
+      "command": "type",
+      "target": "id=update-location-name",
+      "targets": [
+        ["id=update-location-name", "id"],
+        ["css=#update-location-name", "css:finder"],
+        ["xpath=//input[@id='update-location-name']", "xpath:attributes"],
+        ["xpath=//form[@id='update-location-form']/div/input", "xpath:idRelative"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Budapest_vicziani2"
+    }, {
+      "id": "50f71301-5999-4403-ae12-6468ae40242c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(6)",
+      "targets": [
+        ["css=.btn-primary:nth-child(6)", "css:finder"],
+        ["xpath=//input[@value='Update location']", "xpath:attributes"],
+        ["xpath=//form[@id='update-location-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3c32796a-e294-48a2-a8ff-8912196fdc83",
+    "name": "Create location PART",
+    "commands": [{
+      "id": "45fadd41-0380-4d8d-95f6-2fe8cdbb850c",
+      "comment": "",
+      "command": "click",
+      "target": "id=create-location-link",
+      "targets": [
+        ["id=create-location-link", "id"],
+        ["linkText=Create location", "linkText"],
+        ["css=#create-location-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Create location')]", "xpath:link"],
+        ["xpath=//a[@id='create-location-link']", "xpath:attributes"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Create location')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b7e16df-0d65-4f2b-85d9-0caf54fadb25",
+      "comment": "",
+      "command": "type",
+      "target": "id=location-name",
+      "targets": [
+        ["id=location-name", "id"],
+        ["css=#location-name", "css:finder"],
+        ["xpath=//input[@id='location-name']", "xpath:attributes"],
+        ["xpath=//form[@id='location-form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Budapest_vicziani"
+    }, {
+      "id": "e63b3734-35c7-4dcf-ae70-ae5b66532f1b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(2) em",
+      "targets": [
+        ["css=.form-group:nth-child(2) em", "css:finder"],
+        ["xpath=//form[@id='location-form']/div[2]/label/em", "xpath:idRelative"],
+        ["xpath=//em", "xpath:position"],
+        ["xpath=//em[contains(.,'47.4979,19.0402')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b11ae7dc-bf26-4e73-b3f7-18d578dcd2cb",
+      "comment": "",
+      "command": "click",
+      "target": "id=location-coords",
+      "targets": [
+        ["id=location-coords", "id"],
+        ["css=#location-coords", "css:finder"],
+        ["xpath=//input[@id='location-coords']", "xpath:attributes"],
+        ["xpath=//form[@id='location-form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe735644-205b-4e90-970f-b91f71d7b3c5",
+      "comment": "",
+      "command": "type",
+      "target": "id=location-coords",
+      "targets": [
+        ["id=location-coords", "id"],
+        ["css=#location-coords", "css:finder"],
+        ["xpath=//input[@id='location-coords']", "xpath:attributes"],
+        ["xpath=//form[@id='location-form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "47.4979,19.0402"
+    }, {
+      "id": "c9f6016f-41a2-4713-b367-1231bac1c56e",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "127a5811-b97b-4fa7-a9ea-569241c74009",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(5)",
+      "targets": [
+        ["css=.btn:nth-child(5)", "css:finder"],
+        ["xpath=//input[@value='Create location']", "xpath:attributes"],
+        ["xpath=//form[@id='location-form']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f4d3ac9d-e1c9-4cd6-ba9b-576f93011bb3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["bc6e1b99-29c4-4138-8733-2d59812db4d8"]
+  }],
+  "urls": ["http://www.learnwebservices.com/"],
+  "plugins": []
+}
