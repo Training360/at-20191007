@@ -21,6 +21,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "1c3bb4c7-2e76-42fa-9b4a-998ee463922b",
+      "comment": "",
+      "command": "store",
+      "target": "Budapest Viczián",
+      "targets": [],
+      "value": "locationName"
+    }, {
       "id": "bd4dc6ef-b36e-4e97-a70b-6d3989a717b0",
       "comment": "",
       "command": "run",
