@@ -1,0 +1,113 @@
+{
+  "id": "825b5edd-0edf-4b9f-82c1-926f9338d4e4",
+  "version": "2.0",
+  "name": "Learnwebservices",
+  "url": "http://www.learnwebservices.com/",
+  "tests": [{
+    "id": "5a720f5b-bd9b-4fc6-b786-1be89fce9093",
+    "name": "Call the web service",
+    "commands": [{
+      "id": "584832cd-1653-43bc-a172-5bbef7a70b26",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "410d1918-f0c6-49b3-91c9-2fb26abe7d68",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e3e1cc2-eed2-47cd-b3b2-83eda1341c09",
+      "comment": "Klikk a nyelvválasztó",
+      "command": "//click",
+      "target": "css=.text-left",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe4f2520-8a14-4f78-906d-3454c99b5b6a",
+      "comment": "Klikk a copy gombra",
+      "command": "click",
+      "target": "css=.col-md-8 .btn",
+      "targets": [
+        ["css=.col-md-8 .btn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c45c3e78-4167-4ba0-b00f-76158349267d",
+      "comment": "Klikk a beviteli mezőre",
+      "command": "click",
+      "target": "id=hello-name-input",
+      "targets": [
+        ["id=hello-name-input", "id"],
+        ["css=#hello-name-input", "css:finder"],
+        ["xpath=//input[@id='hello-name-input']", "xpath:attributes"],
+        ["xpath=//form[@id='hello-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae1552c7-dd4a-4ecf-a89f-bf276540be5c",
+      "comment": "",
+      "command": "type",
+      "target": "id=hello-name-input",
+      "targets": [
+        ["id=hello-name-input", "id"],
+        ["css=#hello-name-input", "css:finder"],
+        ["xpath=//input[@id='hello-name-input']", "xpath:attributes"],
+        ["xpath=//form[@id='hello-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": "John Doe"
+    }, {
+      "id": "380b03da-1dd1-46ea-acbd-58abd8259028",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[@type='submit']",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='hello-form']/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Call the web service!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f7fadfb-ea80-479c-870d-9c054ca967ad",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=hello-message-input",
+      "targets": [
+        ["id=hello-message-input", "id"],
+        ["css=#hello-message-input", "css:finder"],
+        ["xpath=//input[@id='hello-message-input']", "xpath:attributes"],
+        ["xpath=//form[@id='hello-form']/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Hello John Doe!"
+    }]
+  }, {
+    "id": "1012e476-9cdf-4244-87f2-c787b1eae588",
+    "name": "alma",
+    "commands": []
+  }, {
+    "id": "e71c8bcb-c45a-46e6-b900-b61f1cf96bbf",
+    "name": "korte",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "f92430ed-9356-41b1-9682-b1fe30f46742",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5a720f5b-bd9b-4fc6-b786-1be89fce9093"]
+  }],
+  "urls": ["http://www.learnwebservices.com/"],
+  "plugins": []
+}

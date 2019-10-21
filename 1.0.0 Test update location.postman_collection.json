@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "3f1665e0-7dd2-428f-8d4c-63cd7ce07401",
+		"name": "1.0.0 Test update location",
+		"description": "Ez létrehoz egy *kedvenc helyet*.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create location",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "32f96055-b27d-49be-affa-78231efc72f1",
+						"exec": [
+							"let jsonData = pm.response.json();",
+							"let id = jsonData.id;",
+							"",
+							"console.log(id);",
+							"",
+							"pm.globals.set(\"globalId\", id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Pécs-Viczián-Postman\",\r\n    \"coords\":\"47.497912,19.040235\", \r\n    \"interestingAt\": \"2019-01-01T05:00:00\", \r\n    \"tags\": \"capital,favourite\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/locations/api/locations",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"locations",
+						"api",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update location",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Orfű-Viczián-Postman\",\r\n    \"coords\":\"10,20\", \r\n    \"interestingAt\": \"2019-01-01T05:00:00\", \r\n    \"tags\": \"capital,favourite\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/locations/api/locations/{{globalId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"locations",
+						"api",
+						"locations",
+						"{{globalId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List locations",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2466460f-a719-46b4-ac97-4c8b6446b5b7",
+						"exec": [
+							"let id = pm.globals.get(\"globalId\");",
+							"",
+							"let jsonData = pm.response.json();",
+							"",
+							"let name = \"unknown\";",
+							"for (i = 0; i < jsonData.content.length; i++) {",
+							"    if (jsonData.content[i].id == id) {",
+							"        name = jsonData.content[i].name;",
+							"    }",
+							"}",
+							"",
+							"console.log(name);",
+							"",
+							"pm.test(\"Check name\", function () {",
+							"    pm.expect(name).to.eql(\"Orfű-Viczián-Postman\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/locations/api/locations",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"locations",
+						"api",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find location by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e7f9da8-9fd9-45e0-a90c-02edfa15b193",
+						"exec": [
+							"pm.test(\"A név Orfű-Viczián-Postman\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"Orfű-Viczián-Postman\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/locations/api/locations/{{globalId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"locations",
+						"api",
+						"locations",
+						"{{globalId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
